@@ -1,0 +1,22 @@
+[
+    {
+        "name":"Jeerawuth",
+        "age": 14,
+        "grade": "B"
+    },
+    {
+        "name":"Nira",
+        "age": 13,
+        "grade": "B"
+
+    },
+    {
+        "name":"Mintra",
+        "age": 18,
+        "grade": "B"
+
+    },
+    {
+        "GENDER": ["MALE","FEMALE"]
+    }
+]

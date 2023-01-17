@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="css/style.css">
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-  Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row pt-4">
+                <form class="col-4 mx-  auto">
+                    <select class="form-control">
+                        <option value="">เลือกผู้ใช้</option>
+                        <% lists.forEach(function(user){ %>
+                            <option value="<%= user.name %>"><%= user.name %></option>
+                            <% }) %>
+                        </select>
+                    </form>
+                </div>
+            </div>
+            <!-- FIRSTNAME -->
+            <table align="center" cellpadding = "10">
+            <h3 align = 'center'>Student Signup</h3>
+            <tr>
+                <td>FIRST NAME</td>
+                <td><input type="text" name="First_Name" maxlength="30"/>
+                (max 30 characters a-z and A-Z)
+                </td>
+                </tr>
+            <!-- LASTNAME -->
+                <tr>
+                    <td>LAST NAME</td>
+                    <td><input type="text" name="Last_Name" maxlength="30"/>
+                    (max 30 characters a-z and A-Z)
+                    </td>
+                    </tr>
+            <!-- DATE OF BIRTH -->
+                    <tr>
+                        <td>DATE OF BIRTH</td>
+                        <td>
+                        <select name="Birthday_day" id="Birthday_Day">
+                        <option value="-1">Day:</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        </select>
+                        <select id="Birthday_Month" name="Birthday_Month">
+                            <option value="-1">Month:</option>
+                        </select>
+                        <select name="Birthday_Year" id="Birthday_Year">
+                            <option value="-1">Year:</option>
+                        </select>
+                        <tr>
+                            <td>EMAIL ID</td>
+                            <td><input type="text" name="Email_Id" maxlength="100" /></td>
+                            </tr>
+                        <tr>
+                                <td>MOBILE NUMBER</td>
+                                <td>
+                                <input type="text" name="Mobile_Number" maxlength="10" />
+                                (10 digit number)
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>DEPARTMENT</td>
+                            <td>
+                                <input type="text" name="DEPARTMENT" maxlength="10" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>GENDER</td>
+                            <td>
+                            Male <input type="radio" name="Gender" value="Male" />
+                            Female <input type="radio" name="Gender" value="Female" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ADDRESS <br /><br /><br /></td>
+                            <td><textarea name="Address" rows="4" cols="30"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>COUNTRY</td>
+                            <td><input type="text" name="Country" value="THAI" readonly="readonly" /></td>
+                        </tr>
+
+                </table>
+  <table>
+    <% lists.forEach(function(user) { %>
+      <tr>
+        <td>Name: </td>
+        <td><%= user.name %></td>
+      </tr>
+      <tr>
+        <td>Age: </td>
+        <td><%= user.age %></td>
+      </tr>
+      <tr>
+        <td>Grade: </td>
+        <td><%= user.grade %></td>
+      </tr>
+    <% }); %>
+  </table>
+            
+        </body>
+        </html>
