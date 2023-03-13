@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     </head>
     <body>
-        <div class="container">
+        <!-- <div class="container">
             <div class="row pt-4">
                 <form class="col-4 mx-  auto">
                     <select class="form-control">
@@ -20,20 +20,20 @@
                         </select>
                     </form>
                 </div>
-            </div>
+            </div> -->
             <!-- FIRSTNAME -->
             <table align="center" cellpadding = "10">
             <h3 align = 'center'>Student Signup</h3>
             <tr>
                 <td>FIRST NAME</td>
-                <td><input type="text" name="First_Name" maxlength="30"/>
+                <td><input type="text" name="First_Name" id="First_Name" maxlength="30"/>
                 (max 30 characters a-z and A-Z)
                 </td>
                 </tr>
             <!-- LASTNAME -->
                 <tr>
                     <td>LAST NAME</td>
-                    <td><input type="text" name="Last_Name" maxlength="30"/>
+                    <td><input type="text" name="Last_Name" id="Last_Name" maxlength="30"/>
                     (max 30 characters a-z and A-Z)
                     </td>
                     </tr>
@@ -83,19 +83,19 @@
                         </select>
                         <tr>
                             <td>EMAIL ID</td>
-                            <td><input type="text" name="Email_Id" maxlength="100" /></td>
+                            <td><input type="text" name="Email_Id" id="Email_Id" maxlength="100" /></td>
                             </tr>
                         <tr>
                                 <td>MOBILE NUMBER</td>
                                 <td>
-                                <input type="text" name="Mobile_Number" maxlength="10" />
+                                <input type="text" name="Mobile_Number" id="Mobile_Number" maxlength="10" />
                                 (10 digit number)
                                 </td>
                         </tr>
                         <tr>
                             <td>DEPARTMENT</td>
                             <td>
-                                <input type="text" name="DEPARTMENT" maxlength="10" />
+                                <input type="text" name="DEPARTMENT" id="DEPARTMENT"  maxlength="10" />
                             </td>
                         </tr>
                         <tr>
@@ -113,8 +113,12 @@
                             <td>COUNTRY</td>
                             <td><input type="text" name="Country" value="THAI" readonly="readonly" /></td>
                         </tr>
-
+                        <br>
                 </table>
+                <div class="container">
+                    <div class="col-md-12 text-center">
+                      <button class="btn btn-success" onclick="submit()">Submit</button>
+                    </div>
   <table>
     <% lists.forEach(function(user) { %>
       <tr>
@@ -131,6 +135,33 @@
       </tr>
     <% }); %>
   </table>
-            
         </body>
+        <script>
+            async function submit() {
+                console.log('submit');
+                let First_Name = document.getElementById('First_Name').value
+                let Last_Name = document.getElementById('Last_Name').value
+                let Birthday_Day = document.getElementById('Birthday_Day').value
+                let Birthday_Month = document.getElementById('Birthday_Month').value
+                let Birthday_Year =document.getElementById('Birthday_Year').value
+                let Email_Id = document.getElementById('Email_Id').value
+                let Mobile_Number = document.getElementById('Mobile_Number').value
+                let DEPARTMENT = document.getElementById('DEPARTMENT').value
+                let ADDRESS = document.getElementById('ADDRESS').value
+                let COUNTRY = document.getElementById('COUNTRY').value
+                const data = {
+                    First_Name: First_Name,
+                    Last_Name: Last_Name,
+                    Birthday_Day: Birthday_Day,
+                    Birthday_Month: Birthday_Month,
+                    Birthday_Year: Birthday_Year,
+                    Email_Id: Email_Id,
+                    Mobile_Number: Mobile_Number,
+                    DEPARTMENT: DEPARTMENT,
+                    ADDRESS: ADDRESS,
+                    COUNTRY: COUNTRY,
+                };
+                console.log(data);
+              }
+        </script>
         </html>
