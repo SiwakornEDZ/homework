@@ -1,33 +1,92 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>แบบฟอร์มการสมัครสมาชิก/สมัครงาน</title>
+    <meta charset="utf-8">
+    <title>แบบฟอร์มสมัครงาน</title>
+    <style>
+      @media only screen and (min-width: 768px) {
+	    /* จัด layout สำหรับแท็บเล็ต */
+	    body {
+		max-width: 768px;
+		margin: 0 auto;
+	         }
+        }
+
+      @media only screen and (min-width: 992px) {
+	    /* จัด layout สำหรับจอคอมพิวเตอร์ */
+	    body {
+		max-width: 992px;
+		margin: 0 auto;
+	         }
+        }
+      /* กำหนดขนาดฟอนต์สำหรับทั้งเว็บ */
+      body {
+        font-size: 16px;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 1rem;
+      }
+
+      form {
+        max-width: 600px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+      }
+
+      input[type="text"], input[type="email"], textarea {
+        background-color: #f2f2f2;
+        border: none;
+        padding: 0.5rem;
+        font-size: 1rem;
+      }
+
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      footer {
+        background-color: #ddd;
+        padding: 1rem;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <h1>แบบฟอร์มการสมัครสมาชิก/สมัครงาน</h1>
-    <form method="post" action="member.php">
-      <label for="name">ชื่อ-นามสกุล:</label>
-      <input type="text" id="name" name="name" required><br>
+    <header>
+      <h1>แบบฟอร์มสมัครงาน</h1>
+    </header>
+    <form action="member.php" method="post">
+        <label for="name">ชื่อ-สกุล:</label>
+		<input type="text" id="name" name="name">
 
       <label for="email">อีเมล:</label>
-      <input type="email" id="email" name="email" required><br>
+      <input type="email" id="email" name="email">
 
-      <label for="password">รหัสผ่าน:</label>
-      <input type="password" id="password" name="password" required><br>
+      <label for="phone">เบอร์โทร:</label>
+	  <input type="tel" id="phone" name="phone">
 
-      <label for="gender">เพศ:</label>
-      <input type="radio" id="male" name="gender" value="male" required>
-      <label for="male">ชาย</label>
-      <input type="radio" id="female" name="gender" value="female" required>
-      <label for="female">หญิง</label><br>
-
-      <label for="dob">วันเกิด:</label>
-      <input type="date" id="dob" name="dob" required><br>
+      <label for="message">ข้อความ:</label>
+      <textarea id="message" name="message"></textarea>
 
       <label for="resume">เรซูเม่:</label>
-      <input type="file" id="resume" name="resume"><br>
+	  <input type="file" id="resume" name="resume"><br>
 
-      <input type="submit" value="สมัครสมาชิก/สมัครงาน">
+      <input type="submit" value="ส่ง">
+
     </form>
+    <footer>
+      <p>&copy; 2099 บริษัท MAXCORP., Ltd.</p>
+    </footer>
   </body>
 </html>
