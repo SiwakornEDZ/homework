@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "fourm_reg";
+$dbname = "registerdb";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
@@ -13,7 +13,9 @@ $sql = "CREATE TABLE member (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(50) NOT NULL,
 email VARCHAR(70) NOT NULL,
-password VARCHAR(50) NOT NULL,
+phone VARCHAR(70) NOT NULL,
+position VARCHAR(70) NOT NULL,
+message VARCHAR(70) NOT NULL,
 reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )";
 
@@ -35,7 +37,6 @@ $email = $_POST["email"];
 $phone = $_POST["phone"];
 $position = $_POST["position"];
 $message = $_POST["message"];
-$resume = $_POST["resume"];
 
 $sql = "SELECT * FROM member WHERE email = '$email'";
 $result = mysqli_query($conn, $sql);
@@ -54,8 +55,8 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 
-$sql = "INSERT INTO member (name, email, phone,position,message,resume)
-VALUES ('$name', '$email','$phone','$position','$message','$resume',)";
+$sql = "INSERT INTO member (name, email, phone,position,message)
+VALUES ('$name', '$email','$phone','$position','$message')";
 
 if ($conn->query($sql) === TRUE) {
     echo '    <link
@@ -72,7 +73,6 @@ if ($conn->query($sql) === TRUE) {
   <h3>อีเมล ' . $phone .' <br></h3>
   <h3>อีเมล ' . $position .' <br></h3>
   <h3>อีเมล ' . $message .' <br></h3>
-  <h3>รหัสผ่าน ' . $resume .' <br></h3>
   <br><button type="submit" onclick="history.back()" class="btn btn-primary btn-block mb-4">กลับไปยังหน้าหลัก</button></div>';
     exit();
  
