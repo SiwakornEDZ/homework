@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>แบบฟอร์มการสมัครสมาชิก/สมัครงาน</title>
+  </head>
+  <body>
+    <h1>แบบฟอร์มการสมัครสมาชิก/สมัครงาน</h1>
+    <form method="post" action="member.php">
+      <label for="name">ชื่อ-นามสกุล:</label>
+      <input type="text" id="name" name="name" required><br>
+
+      <label for="email">อีเมล:</label>
+      <input type="email" id="email" name="email" required><br>
+
+      <label for="password">รหัสผ่าน:</label>
+      <input type="password" id="password" name="password" required><br>
+
+      <label for="gender">เพศ:</label>
+      <input type="radio" id="male" name="gender" value="male" required>
+      <label for="male">ชาย</label>
+      <input type="radio" id="female" name="gender" value="female" required>
+      <label for="female">หญิง</label><br>
+
+      <label for="dob">วันเกิด:</label>
+      <input type="date" id="dob" name="dob" required><br>
+
+      <label for="resume">เรซูเม่:</label>
+      <input type="file" id="resume" name="resume"><br>
+
+      <input type="submit" value="สมัครสมาชิก/สมัครงาน">
+    </form>
+  </body>
+</html>
